@@ -1,53 +1,64 @@
 #include <stdio.h>
 
-int main() {
-
-  int torre = 2;
-  int bispo = 3;
-  int rainha = 6;
-  int cavalo = 1;
-
-  // Torre: Movimento horizontal (for)
-  printf("Simulando movimento da Torre (%d casas para a direita):\n", torre);
-  for (int i = 0; i < torre; i++) {
+void movimentoTorre(int casas){
+  for (int i = 0; i < casas; i++) {
     printf("Direita\n");
   }
+}
 
-  // Bispo: Movimento diagonal (while)
-  printf(
-      "\nSimulando movimento do Bispo (%d casas na diagonal cima/direita):\n",
-      bispo);
+void movimentoBispo(int casas){
   int j = 0;
-  while (j < bispo) {
+  while (j < casas) {
     printf("Cima, Direita\n");
     j++;
   }
+}
 
-  // Rainha: Movimento horizontal (do-while)
-  printf("\nSimulando movimento da Rainha (%d casas para a esquerda):\n",
-         rainha);
+void movimentoRainha(int casas){
   int k = 0;
   do {
     printf("Esquerda\n");
     k++;
-  } while (k < rainha);
+  } while (k < casas);
+}
 
-  // Cavalo: Movimento em L (Loop aninhado)
-  printf("\nSimulando movimento do Cavalo (%d casas em L):\n", cavalo);
-
-  for (int i = 0; i < cavalo; i++) {
+void movimentoCavalo(int casas){
+  for (int i = 0; i < casas; i++) {
     // Primeiro, andar 2 vezes para cima
     for (int j = 0; j < 2; j++) {
       printf("Cima\n");
     }
 
     // Depois, andar 1 vez para a esquerda
-    j = 0;
+    int j = 0;
     while (j < 1) {
       printf("Esquerda\n");
       j++;
     }
   }
+}
 
+int main() {
+
+  int rainha = 6;
+  int cavalo = 1;
+
+  // Torre: Movimento horizontal (for)
+  
+  printf("Simulando movimento da Torre:\n");
+  movimentoTorre(3);
+  
+  // Bispo: Movimento diagonal (while)
+  
+  printf("\nSimulando movimento do Bispo:\n");
+  movimentoBispo(4);
+  // Rainha: Movimento horizontal (do-while)
+  
+  printf("\nSimulando movimento da Rainha:\n");
+  movimentoRainha(2);
+  // Cavalo: Movimento em L (Loop aninhado)
+  
+  printf("\nSimulando movimento do Cavalo:\n");
+  movimentoCavalo(2);
   return 0;
 }
