@@ -37,26 +37,28 @@ int main() {
 
   int rainha = 6;
   int cavalo = 1;
-
+  int torre = 3;
+  int bispo = 4;
+  
   // Torre: Movimento horizontal (for)
 
   printf("Simulando movimento da Torre:\n");
-  movimentoTorre(3);
+  movimentoTorre(torre);
 
   // Bispo: Movimento diagonal (while)
 
   printf("\nSimulando movimento do Bispo:\n");
-  movimentoBispo(4);
+  movimentoBispo(bispo);
   
   // Rainha: Movimento horizontal (do-while)
   
   printf("\nSimulando movimento da Rainha:\n");
-  movimentoRainha(2);
+  movimentoRainha(rainha);
   
   // Cavalo: Movimento em L (Loop aninhado)
   
   printf("\nSimulando movimento do Cavalo:\n");
-  movimentoCavalo(2);
+  movimentoCavalo(cavalo);
 
   return 0;
 }
